@@ -1,0 +1,14 @@
+{
+  "name": "tavily-search",
+  "description": "Search real news via Tavily, reaching major outlets (NYT, WSJ, Reuters, BBC, etc.) that Claude's built-in web tools can't fetch directly. Each teammate uses their own free Tavily account/key, not a shared one.",
+  "version": "1.0.0",
+  "userConfig": {
+    "tavily_api_key": {
+      "type": "string",
+      "title": "Tavily API Key",
+      "description": "Your own personal Tavily API key (see the setup-tavily skill if you don't have one yet - it's free, no card required).",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

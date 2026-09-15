@@ -1,0 +1,11 @@
+{
+  "name": "tavily-search-plugin-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server backing the tavily-search Claude Code plugin.",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.24.0"
+  }
+}
