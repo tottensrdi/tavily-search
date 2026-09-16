@@ -1,12 +1,14 @@
 {
+  "name": "tavily-search-marketplace",
+  "owner": {
+    "name": "RDI",
+    "email": "t.ottens@rdi.org"
+  },
   "plugins": [
     {
       "name": "tavily-search",
       "description": "Search real news via Tavily, reaching major outlets (NYT, WSJ, Reuters, BBC, etc.) that Claude's built-in web tools can't fetch directly. Each person uses their own free Tavily account/key.",
-      "source": {
-        "type": "local",
-        "path": "."
-      }
+      "source": "."
     }
   ]
 }
