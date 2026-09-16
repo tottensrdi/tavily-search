@@ -4,7 +4,7 @@
       "command": "node",
       "args": ["${CLAUDE_PLUGIN_ROOT}/server.js"],
       "env": {
-        "TAVILY_API_KEY": "${user_config.tavily_api_key}"
+        "TAVILY_API_KEY": "PASTE_YOUR_TAVILY_KEY_HERE"
       }
     }
   }

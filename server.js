@@ -16,7 +16,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 
 const TAVILY_API_KEY = process.env.TAVILY_API_KEY;
-if (!TAVILY_API_KEY) {
+if (!TAVILY_API_KEY || TAVILY_API_KEY === "PASTE_YOUR_TAVILY_KEY_HERE") {
   console.error(
     "TAVILY_API_KEY is not set. Run the setup-tavily skill (/tavily-search:setup-tavily) to get your own free key and configure it."
   );

@@ -38,8 +38,12 @@ A working key returns real JSON with `account.plan_limit` and `account.plan_usag
 
 ## Step 4: Get the key into Claude Code
 
-Claude Code should prompt for `tavily_api_key` automatically when this plugin is enabled (declared in `.claude-plugin/plugin.json`'s `userConfig`). If it doesn't prompt, or the user needs to change it later, tell them to check the plugin's configuration in Claude Code's `/plugin` settings for `tavily-search`, or reinstall the plugin to trigger the prompt again.
+Don't rely on an interactive config prompt firing - it doesn't reliably happen when this plugin was installed by copying it into `~/.claude/skills/` (the no-git install path most people use) rather than through the marketplace/install flow. Instead, edit the key directly into this plugin's own `.mcp.json`, which is a certain, verified mechanism (this is literally how the server was tested during development):
+
+1. Find `.mcp.json` in `${CLAUDE_PLUGIN_ROOT}` (the plugin's own root directory - the same folder this skill lives under).
+2. Edit the `env.TAVILY_API_KEY` value to the user's real key, replacing whatever placeholder is there.
+3. Tell the user they need to fully restart Claude Code once for the MCP server to pick up the new value (it reads the env var once at startup, not live).
 
 ## Step 5: Verify end to end
 
-Once configured, actually call the `tavily_search` tool with a simple real query (e.g. "today's top news") and confirm a real result comes back rather than an error - report the real outcome to the user, don't assume it worked.
+After the restart, actually call the `tavily_search` tool with a simple real query (e.g. "today's top news") and confirm a real result comes back rather than an error - report the real outcome to the user, don't assume it worked.
